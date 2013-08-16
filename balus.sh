@@ -32,6 +32,7 @@ fi
 
 # 役者が揃ったのでバルス発動
 echo "ムスカ：時間だ！答えを聞こう！！"
+sleep 5
 jp2a --color ./pics/sheeta-pazu1.jpg
 sleep 5
 echo "ムスカ：・・んん？"
@@ -65,6 +66,7 @@ done
 # 目がぁぁぁぁっぁぁ
 jp2a --color ./pics/muska2.jpg
 echo 目がぁぁぁぁっぁぁ!!目がぁぁぁぁっぁぁ!!!!!
+sleep 10
 
 # ラピュタ崩れる
 jp2a --color ./pics/break-laputa.jpg
@@ -80,4 +82,4 @@ sleep 10
 
 # エンディング
 jp2a -i ./pics/end.jpg
-sleep 10
+sleep 5
