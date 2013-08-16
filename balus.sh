@@ -31,14 +31,12 @@ fi
 . ./sheeta-pazu-muska.sh
 
 # 役者が揃ったのでバルス発動
+echo "ムスカ：時間だ！答えを聞こう！！"
 jp2a --color ./pics/sheeta-pazu1.jpg
 sleep 5
+echo "ムスカ：・・んん？"
 jp2a -i ./pics/balus1.jpg
 sleep 5
-
-# 目がぁぁぁぁっぁぁ
-jp2a --color ./pics/muska2.jpg
-echo 目がぁぁぁぁっぁぁ!!目がぁぁぁぁっぁぁ!!!!!
 
 # 削除対象の取得
 i=$(ec2-describe-instances | grep instance | awk '{print $3}')
@@ -63,6 +61,14 @@ done
 for spot in $si ; do
   ec2-terminate-instances $spot
 done
+
+# 目がぁぁぁぁっぁぁ
+jp2a --color ./pics/muska2.jpg
+echo 目がぁぁぁぁっぁぁ!!目がぁぁぁぁっぁぁ!!!!!
+
+# ラピュタ崩れる
+jp2a --color ./pics/break-laputa.jpg
+sleep 10
 
 # ラピュタ飛んでいく
 jp2a --color ./pics/laputa-fly.jpg
