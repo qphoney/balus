@@ -3,6 +3,7 @@
 # 私の家に、古い秘密の名前があって、この石を受け継ぐとき、その名前も私継いだの
 # ルシータ・トエル・ウル・ラピュタ
 export EC2_REGION=
+export EC2_URL=
 export EC2_HOME=
 export PATH=$PATH:$EC2_HOME/bin
 export JAVA_HOME=
