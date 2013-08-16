@@ -36,6 +36,7 @@ sleep 5
 jp2a --color ./pics/sheeta-pazu1.jpg
 sleep 5
 echo "ムスカ：・・んん？"
+sleep 3
 jp2a -i ./pics/balus1.jpg
 sleep 5
 
