@@ -44,6 +44,7 @@ sleep 5
 i=$(ec2-describe-instances | grep instance | awk '{print $3}')
 si=$(ec2-describe-spot-instance-requests | grep SPOTINSTANCEREQUEST | grep active |awk '{print $8}')
 as=$(as-describe-auto-scaling-groups | grep AUTO-SCALING-GROUP | awk '{print $2}')
+rds=$(rds-describe-db-instances | grep DBINSTANCE | awk '{print $2}')
 
 # 問答無用でAutoScalingGroupを削除
 for autoscale in $as ; do
@@ -62,6 +63,11 @@ done
 # スポットインスタンスを削除
 for spot in $si ; do
   ec2-terminate-instances $spot
+done
+
+# RDSを削除
+for db in $rds ; do
+  rds-delete-db-instance $db -f --skip-final-snapshot
 done
 
 # 目がぁぁぁぁっぁぁ
