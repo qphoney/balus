@@ -45,6 +45,7 @@ i=$(ec2-describe-instances | grep instance | awk '{print $3}')
 si=$(ec2-describe-spot-instance-requests | grep SPOTINSTANCEREQUEST | grep active |awk '{print $8}')
 as=$(as-describe-auto-scaling-groups | grep AUTO-SCALING-GROUP | awk '{print $2}')
 rds=$(rds-describe-db-instances | grep DBINSTANCE | awk '{print $2}')
+elb=$(elb-describe-lbs | awk '{print $2}')
 
 # 問答無用でAutoScalingGroupを削除
 for autoscale in $as ; do
@@ -68,6 +69,11 @@ done
 # RDSを削除
 for db in $rds ; do
   rds-delete-db-instance $db -f --skip-final-snapshot
+done
+
+# DLBを強制削除
+for balancer in $elb ; do
+  elb-delete-lb $balancer --force
 done
 
 # 目がぁぁぁぁっぁぁ
